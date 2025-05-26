@@ -4,7 +4,8 @@ An Elixir package for dealing with
 [CARv1](https://ipld.io/specs/transport/car/carv1/) (content archive) files.
 
 Currently only just a basic decoder for use in
-[Comet](https://github.com/cometsh), but hopefully to become a proper
+[Comet](https://github.com/cometsh), but hopefully to become a fully fledged CAR
+library for all sorts of uses (eventually).
 
 ## TODO
 
