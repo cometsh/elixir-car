@@ -22,7 +22,7 @@ defmodule CAR.Decoder do
     with {length, rest} <- LEB128.decode(binary),
          <<header::binary-size(length), rest::binary>> <- rest,
          #  TODO: make sure header is always CBOR
-         {:ok, %{"version" => 1, "roots" => roots}, <<>>} <- CAR.CborDag.decode(header) do
+         {:ok, %{"version" => 1, "roots" => roots}, <<>>} <- CAR.DagCbor.decode(header) do
       {:ok, roots, rest}
     else
       # Invalid header length
@@ -39,8 +39,8 @@ defmodule CAR.Decoder do
     with {length, rest} <- LEB128.decode(binary),
          <<cid_data::binary-size(length), rest::binary>> <- rest,
          {_version, cid, data} <- cid(cid_data),
-         # TODO: support PB-DAG & RAW modes
-         {:ok, block, <<>>} <- CAR.CborDag.decode(data),
+         # TODO: support DAG-PB & RAW modes
+         {:ok, block, <<>>} <- CAR.DagCbor.decode(data),
          blocks <- Map.put(blocks, cid, block) do
       case rest do
         <<>> -> {:ok, blocks}

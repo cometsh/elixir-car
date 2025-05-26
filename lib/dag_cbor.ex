@@ -1,6 +1,6 @@
-defmodule CAR.CborDag do
+defmodule CAR.DagCbor do
   @moduledoc """
-  Module for helping with CBOR-DAG quirks.
+  Module for helping with DAG-CBOR quirks.
   """
 
   @spec decode(binary()) :: {:ok, any(), binary()} | {:error, atom()}
@@ -29,7 +29,7 @@ defmodule CAR.CborDag do
 
   defp remap_cid_tags(term), do: term
 
-  # CIDs are always tagged with `42` in CBOR-DAG.
+  # CIDs are always tagged with `42` in DAG-CBOR.
   # TODO?: stringify them?
   defp do_remap(%CBOR.Tag{tag: 42, value: %CBOR.Tag{tag: :bytes, value: <<0, cid::binary>>}}),
     do: cid
