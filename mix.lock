@@ -1,0 +1,5 @@
+%{
+  "cbor": {:hex, :cbor, "1.0.1", "39511158e8ea5a57c1fcb9639aaa7efde67129678fee49ebbda780f6f24959b0", [:mix], [], "hexpm", "5431acbe7a7908f17f6a9cd43311002836a34a8ab01876918d8cfb709cd8b6a2"},
+  "typedstruct": {:hex, :typedstruct, "0.5.3", "d68ae424251a41b81a8d0c485328ab48edbd3858f3565bbdac21b43c056fc9b4", [:make, :mix], [], "hexpm", "b53b8186701417c0b2782bf02a2db5524f879b8488f91d1d83b97d84c2943432"},
+  "varint": {:hex, :varint, "1.5.1", "17160c70d0428c3f8a7585e182468cac10bbf165c2360cf2328aaa39d3fb1795", [:mix], [], "hexpm", "24f3deb61e91cb988056de79d06f01161dd01be5e0acae61d8d936a552f1be73"},
+}
