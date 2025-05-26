@@ -10,8 +10,10 @@ defmodule CAR.MixProject do
       version: @version,
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
-      package: package(),
       deps: deps(),
+      name: "CAR",
+      description: "Elixir CAR (content archive) file support",
+      package: package(),
       docs: docs()
     ]
   end
@@ -33,7 +35,7 @@ defmodule CAR.MixProject do
 
   def package do
     [
-      licenses: "MIT",
+      licenses: ["MIT"],
       links: %{"GitHub" => @source_url}
     ]
   end
