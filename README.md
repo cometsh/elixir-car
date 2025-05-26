@@ -15,7 +15,7 @@ Currently only just a basic decoder for use in
 
 ## Installation
 
-Add `car` to your `mix.exs
+Add `car` to your `mix.exs`
 
 ```elixir
 def deps do
