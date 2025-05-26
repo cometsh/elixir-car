@@ -26,6 +26,13 @@ def deps do
 end
 ```
 
+## Basic Usage
+
+```elixir
+car_binary = receive_car()
+{:ok, decoded_car} = CAR.decode(car_binary)
+```
+
 ## License
 
 This project is licensed under the [MIT License](./LICENSE)
