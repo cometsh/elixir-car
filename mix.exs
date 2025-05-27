@@ -29,7 +29,8 @@ defmodule CAR.MixProject do
       {:cbor, "~> 1.0.0"},
       {:typedstruct, "~> 0.5"},
       {:varint, "~> 1.4"},
-      {:ex_doc, "~> 0.34", only: :dev, runtime: false, warn_if_outdated: true}
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
 
