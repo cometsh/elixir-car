@@ -3,10 +3,10 @@ defmodule CAR.DagCbor do
   Module for helping with DAG-CBOR quirks.
   """
 
-  @spec decode(binary()) :: {:ok, any(), binary()} | {:error, atom()}
   @doc """
   Decode a given binary using CBOR, with extra handling to pull tagged CIDs out of their wrapping struct.
   """
+  @spec decode(binary()) :: {:ok, any(), binary()} | {:error, atom()}
   def decode(binary) do
     case CBOR.decode(binary) do
       {:ok, value, rest} -> {:ok, remap_cid_tags(value), rest}

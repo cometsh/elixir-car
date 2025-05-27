@@ -9,7 +9,7 @@ defmodule CAR.Decoder do
 
   alias Varint.LEB128
 
-  @spec decode(binary()) :: {:ok, CAR.Archive.t()} | header_error()
+  @spec decode(binary()) :: {:ok, CAR.Archive.t()} | header_error() | block_error()
   def decode(binary) do
     with {:ok, roots, rest} <- header(binary),
          {:ok, blocks} <- data(rest) do
@@ -48,8 +48,7 @@ defmodule CAR.Decoder do
       end
     else
       <<_::binary>> -> {:error, :block, :too_short}
-      # TODO: better name lol
-      {:ok, _, _} -> {:error, :block, :not_one_cbor}
+      {:ok, _, _} -> {:error, :block, :incorrect_length}
       {:error, reason} -> {:error, :block, reason}
     end
   end
